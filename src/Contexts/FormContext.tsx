@@ -11,7 +11,7 @@ type State = {
   gitHub: string;
 };
 
-const initialData = {
+const initialData: State = {
   currentStep: 0,
   name: '',
   level: 0,
