@@ -22,11 +22,7 @@ export const FormStep2 = () => {
   }, []);
 
   const handleNextStepClick = () => {
-    if (state.name.length > 3) {
-      navigate('/step2');
-    } else {
-      toast.info('O nome deve ter mais de 3 caracteres');
-    }
+    navigate('/step3');
   }
 
   const setLevel = (level: number) => {
@@ -34,13 +30,6 @@ export const FormStep2 = () => {
       type: FormActions.setLevel,
       payload: level
     })
-  }
-
-  const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
-    dispatch({
-      type: FormActions.setName,
-      payload: e.target.value
-    });
   }
 
   return (

@@ -8,7 +8,7 @@ type State = {
   name: string;
   level: 0 | 1;
   email: string;
-  github: string;
+  gitHub: string;
 };
 
 const initialData = {
@@ -16,7 +16,7 @@ const initialData = {
   name: '',
   level: 0,
   email: '',
-  github: ''
+  gitHub: ''
 };
 
 type Action = {
@@ -57,7 +57,7 @@ const formReducer = (state: State, action: Action) => {
     case FormActions.setEmail:
       return { ...state, email: action.payload };
     case FormActions.setGithub:
-      return { ...state, github: action.payload };
+      return { ...state, gitHub: action.payload };
     default:
       return state;
   }
