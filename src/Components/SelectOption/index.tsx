@@ -1,14 +1,7 @@
 import * as S from './styles';
+import * as I from './types'
 
-type Props = {
-  title: string;
-  description: string;
-  icon: string;
-  selected: boolean;
-  onClick: () => void;
-}
-
-export const SelectOption = ({ title, description, icon, selected, onClick }: Props) => {
+export const SelectOption = ({ title, description, icon, selected, onClick }: I.SelectOptionProps) => {
   return (
     <S.Constainer onClick={onClick} selected={selected}>
       <S.Icon>{icon}</S.Icon>
