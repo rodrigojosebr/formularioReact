@@ -1,17 +1,8 @@
 //Criação do context baseia-se em : Context, Reducer, Provider, Hook
-
 import { createContext, useContext, useReducer } from "react";
+import * as I from './FormContext.types';
 
-//Tipagem
-type State = {
-  currentStep: number;
-  name: string;
-  level: 0 | 1;
-  email: string;
-  gitHub: string;
-};
-
-const initialData: State = {
+const initialData: I.State = {
   currentStep: 0,
   name: '',
   level: 0,
@@ -19,23 +10,8 @@ const initialData: State = {
   gitHub: ''
 };
 
-type Action = {
-  type: FormActions;
-  payload: any;
-};
-
-type FormProviderProps = {
-  children: React.ReactNode;
-  // children: ReactNode
-};
-
-type ContextType = {
-  state: State;
-  dispatch: React.Dispatch<Action>;
-};
-
 //Criação do context
-const FormContext = createContext<ContextType | undefined>(undefined);
+const FormContext = createContext<I.ContextType | undefined>(undefined);
 
 //Reducer
 export enum FormActions {
@@ -46,7 +22,7 @@ export enum FormActions {
   setGithub
 };
 
-const formReducer = (state: State, action: Action) => {
+const formReducer = (state: I.State, action: I.Action) => {
   switch (action.type) {
     case FormActions.setCurrentStep:
       return { ...state, currentStep: action.payload };
@@ -64,7 +40,7 @@ const formReducer = (state: State, action: Action) => {
 };
 
 //Provider
-export const FormProvider = ({ children }: FormProviderProps) => {
+export const FormProvider = ({ children }: I.FormProviderProps) => {
   const [state, dispatch] = useReducer(formReducer, initialData)
   const value = { state, dispatch };
   return (

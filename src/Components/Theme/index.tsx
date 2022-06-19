@@ -1,13 +1,10 @@
-import * as S from './styles';
+import { useForm } from '../../Contexts/FormContext';
 import { Header } from '../Header';
 import { SideBarItem } from '../SideBarItem';
-import { useForm } from '../../Contexts/FormContext';
+import * as S from './styles';
+import * as I from './types';
 
-type Props = {
-  children: React.ReactNode;
-}
-
-export const Theme = ({ children }: Props) => {
+export const Theme = ({ children }: I.ChildrenProps) => {
   const { state } = useForm();
 
   return (
@@ -37,7 +34,13 @@ export const Theme = ({ children }: Props) => {
               path="/step3"
               active={state.currentStep === 3}
             />
-
+            <SideBarItem
+              title="Dados informados"
+              description="Revisar dados informados e confirmar envio"
+              icon="send"
+              path="/step4"
+              active={state.currentStep === 4}
+            />
           </S.Sidebar>
           <S.Page>
             {children}
@@ -46,4 +49,4 @@ export const Theme = ({ children }: Props) => {
       </S.Area>
     </S.Container>
   );
-};
+}

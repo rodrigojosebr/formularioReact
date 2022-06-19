@@ -4,4 +4,4 @@ export type SelectOptionProps = {
   icon: string;
   selected: boolean;
   onClick: () => void;
-}
+};

@@ -4,4 +4,4 @@ export type SideBarItemProps = {
   icon: string;
   path: string;
   active: boolean;
-}
+};
