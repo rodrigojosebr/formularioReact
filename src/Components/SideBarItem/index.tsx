@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ReactComponent as BookIcon } from '../../Assets/book.svg';
 import { ReactComponent as MailIcon } from '../../Assets/mail.svg';
 import { ReactComponent as ProfileIcon } from '../../Assets/profile.svg';
+import { ReactComponent as SendIcon } from '../../Assets/send.svg';
 import * as S from './styles';
 import * as I from './types';
 
@@ -17,6 +18,7 @@ export const SideBarItem = ({ title, description, icon, path, active }: I.SideBa
           {icon === 'profile' && <ProfileIcon fill="white" width={24} height={24} />}
           {icon === 'book' && <BookIcon fill="white" width={24} height={24} />}
           {icon === 'mail' && <MailIcon fill="white" width={24} height={24} />}
+          {icon === 'send' && <SendIcon fill="white" width={24} height={24} />}
         </S.IconArea>
         <S.Point active={active}></S.Point>
       </Link>

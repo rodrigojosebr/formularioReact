@@ -35,7 +35,7 @@ export const FormStep2 = () => {
   return (
     <Theme>
       <S.Container>
-        <p>Passo 2 / 3</p>
+        <p>Passo 2 / 4</p>
         <h1>{state.name}, qual o seu perfil?</h1>
         <p>Escolha a opção abaixo de acordo com o seu perfil!</p>
 

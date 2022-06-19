@@ -20,12 +20,11 @@ export const FormStep3 = () => {
     }
   }, []);
 
-  const handleFinishClick = () => {
+  const handleNextStepClick = () => {
     if (state.email !== '' && state.gitHub !== '') {
-      toast.success(`${state.name}, seu cadastro concluído com sucesso!`);
-      console.log(state)
+      navigate('/step4');
     } else {
-      toast.info(`${state.name}, preencha todos os campos para concluir o cadastro!`);
+      toast.error(`${state.name}, informe seus contatos de e-mail e GitHub!`);
     }
   }
 
@@ -46,8 +45,8 @@ export const FormStep3 = () => {
   return (
     <Theme>
       <S.Container>
-        <p>Passo 3 / 3</p>
-        <h1>Legal {state.name}! Onde te encontramos?</h1>
+        <p>Passo 3 / 4</p>
+        <h1>Último {state.name}! Onde te encontramos?</h1>
         <p>Informe os seus contatos abaixo.</p>
         <hr />
         <label>
@@ -69,8 +68,8 @@ export const FormStep3 = () => {
           />
         </label>
         <Link to="/step2" className="backButton">Voltar</Link>
-        <button onClick={handleFinishClick}>
-          Finalizar Cadastro
+        <button onClick={handleNextStepClick}>
+          Próximo
         </button>
       </S.Container>
     </Theme>

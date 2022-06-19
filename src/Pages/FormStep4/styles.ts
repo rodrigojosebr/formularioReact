@@ -19,26 +19,6 @@ export const Container = styled.div`
     margin: 30px 0;
   }
 
-  label {
-    font-size: 13px;
-    display: block;
-    margin-bottom: 25px;
-
-    input {
-      display: block;
-      margin-top: 7px;
-      box-sizing: border-box;
-      width: 100%;
-      padding: 20px 10px;
-      border: 2px solid #25CD89;
-      border-radius: 10px;
-      color: #FFF;
-      outline: none;
-      font-size: 15px;
-      background-color: #02044A;
-    }
-  }
-
   button {
     background-color: #25CD89;
     color: #FFF;
@@ -58,4 +38,19 @@ export const Container = styled.div`
     color: #B8B8D4;
     margin-right: 20px;
   };
-`
+`;
+
+export const Infos = styled.div`
+  display: block;
+  width: 100%;
+`;
+
+export const Label = styled.p`
+  margin: 0;
+  padding: 0;
+`;
+
+export const Value = styled.h2`
+  margin: 2px 5px 15px 10px;
+  padding: 0;
+`;
